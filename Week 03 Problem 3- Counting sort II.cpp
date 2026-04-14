@@ -2,27 +2,27 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int n; cin >> n;
-    int arr[1000];
-
     int count[100] = {0};
-
+    
     for(int i = 0; i < n; i++)
     {
-        cin >> arr[i];
-        count[arr[i]]++;
+        int x; cin >> x;
+        count[x]++;
     }
-
+    
+    bool first = true;
     for(int i = 0; i < 100; i++)
     {
-        while(count[i]--)
+        for(int j = 0; j < count[i]; j++)
         {
-            cout << i << " ";
+            if(!first) cout << " ";
+            cout << i;
+            first = false;
         }
     }
-
+    
     return 0;
 }
